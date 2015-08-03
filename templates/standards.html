@@ -1,0 +1,31 @@
+<ion-view title="Standards">
+	<ion-content>
+
+	    <div class="list list-inset">
+
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input  list="stuff" type="text" ng-model="standard.searched" placeholder="Company">
+					<datalist id="stuff">
+						<option ng-repeat="co in companies" value="{{co}}">
+					</datalist>
+				</label>
+				<button class="button button-clear button-icon icon ion-search" ng-click="search()"></button>					
+			</div>
+		</div>
+
+			<div>
+				<h2>{{searched}}</h2>
+				<div class="row" ng-repeat="stan in stans | orderBy: 'grade' : true">			  	
+
+			  	<div class="col right"><br>
+			    <i ng-repeat="num in range(stan.grade)" class="icon ion-star" ng-class="color(stan.grade)"></i></div> 
+			  	<div class="col center">
+			    <br>{{stan.type}} {{stan.quality}}<br>
+			    Ø: {{stan.diameter}} | length: {{stan.minlength}}
+			  	</div> 
+			</div>
+
+
+	</ion-content>
+</ion-view>

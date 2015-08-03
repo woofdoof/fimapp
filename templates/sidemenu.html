@@ -1,0 +1,37 @@
+<ion-side-menus>
+
+	<ion-side-menu-content>      
+		<ion-nav-view name="menuContent"></ion-nav-view>
+	</ion-side-menu-content>
+
+	<ion-side-menu side="left" expose-aside-when="large" class="mymenu" width="120">
+		<ion-content class="dark">
+			<ion-list>
+
+				<div ng-repeat="p in pages">
+					<a ui-sref="app.{{p.ref}}" ui-sref-active="currentlyActive" class="item item-thumbnail-left">					
+					<img src="img/{{p.name}}.png">
+					</a> 
+				</div>					
+
+			</ion-list>
+
+		</ion-content>
+
+	</ion-side-menu>
+
+</ion-side-menus>
+
+<ion-footer-bar align-title="left" class="bar-positive">
+
+  <div class="padding">Logged in as: <b>{{authName}}</b></div>
+  <h1 class="title">{{temperature}}°C</h1>
+  	<div class="buttons" ng-click="errorModal()">
+    	<button class="button button-icon icon ion-alert-circled alertButton yellow">
+    	5</button>
+
+
+  </div>
+
+</ion-footer-bar>
+

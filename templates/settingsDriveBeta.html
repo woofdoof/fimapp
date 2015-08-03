@@ -1,0 +1,39 @@
+<ion-view title="">
+	<ion-content id="myContent">
+
+
+	<div id="imageContainer" ng-drop="true" ng-drop-success="onDropComplete($data,$event)">
+
+  			<img class="moveableImages" src="img/topview.png" id="topview" data-tap-disabled="true" ng-drag="true" 
+  			ng-drag-data="{id: 'topview'}" ng-drag-success="onDragSuccess($data, $event)">
+
+  			<img src="img/closeup.png" id="closeup" data-tap-disabled="true" ng-drag="true" 
+  			ng-drag-data="{id: 'closeup'}" ng-drag-success="onDragSuccess($data, $event)">
+
+   			<img src="img/diameter.png" id="diameter" data-tap-disabled="true" ng-drag="true" 
+  			ng-drag-data="{id: 'diameter'}" ng-drag-success="onDragSuccess($data, $event)"> 
+
+  			<img src="img/length.png" id="length" data-tap-disabled="true" ng-drag="true" 
+  			ng-drag-data="{id: 'length'}" ng-drag-success="onDragSuccess($data, $event)">
+	</div> 
+
+
+	<div class="settingsContainer">
+
+			<img width="80px" src="img/trash.png">
+
+  			<div class="item range range-dark">
+   				<input type="range" name="volume" min="0" max="100" value="33">
+    			<i class="icon ion-contrast"></i>
+    		</div> 
+
+
+  			<div class="item range range-dark">
+    			<input type="range" name="volume" min="0" max="100" value="33">
+    			<i class="icon ion-load-d"></i>
+    		</div> 
+    		
+	</div>
+
+	</ion-content>
+</ion-view>

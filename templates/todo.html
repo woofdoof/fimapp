@@ -1,0 +1,27 @@
+<ion-view title="ToDo-List" ng-init="initTodos()">
+
+	<ion-content>
+
+	    <div class="list list-inset">
+
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input  type="text" ng-model="todo.new" placeholder="Add a new task">				
+				</label>
+				<button class="button button-clear button-icon icon ion-plus" ng-click="createTodo()"></button>					
+			</div>
+
+		</div>
+	      
+	    <div class="list list-inset">
+			<div ng-repeat="todo in data.todos" class="item item-input-inset item-button-right" ng-class="{completed: todo.completed}">
+				{{todo.title}}
+				<div class="buttons">
+					<button class="button button-clear button-icon icon ion-checkmark" ng-click="completeTodo($index)" ng-class="{checkmarkDone: todo.completed}"></button>
+					<button class="button button-clear button-icon icon ion-close"  ng-click="removeTodo($index)"></button>
+				</div>	
+			</div>
+		</div>
+	</ion-content>
+
+</ion-view>

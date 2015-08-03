@@ -1,0 +1,41 @@
+<ion-view>
+
+	<ion-content>
+
+		<div class="padding-left padding-top padding-right">
+			<img class="full-image" src="img/fimapplogo.png"/>
+		</div>
+
+		<div>
+
+			<div class="list list-inset">
+				<label class="item item-input">
+					<span class="input-label">Username:</span>
+					<input ng-model="username" type="text"/>
+				</label>
+				<label class="item item-input">	
+					<span class="input-label">Password:</span>
+					<input ng-model="password" type="password"/>
+				</label>
+			</div>
+
+
+			<div ng-show="errors.val">
+			<span id="errMessage">{{errors.message}}</span>
+			</div>	
+			
+			<div ng-hide="inProgress" class="button-bar padding">
+				<button ng-click="login(username, password)" class="button button-calm">Login</button>
+				<button ng-click="register(username, password)" class="button button-dark">Register</button>
+			</div>
+
+			<div ng-show="inProgress">
+				<p id="spinner"></p>
+				<p>{{message}}</p>
+			</div>	
+
+		</div>
+
+	</ion-content>
+
+</ion-view>
